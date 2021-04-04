@@ -1,0 +1,51 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img alt="Logo" id="logo" src="assets/Logo-header.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card class="container">
+          <ion-card-header>
+            <ion-card-title>Iniciar sesión</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <form [formGroup]="Loginform" (ngSubmit)="sendData(Loginform.value)">
+              <ion-input placeholder="Correo electrónico" formControlName="username" type="username"></ion-input>
+              <ng-container *ngFor="let validation of validation_messages.username">
+                <div class="error-message"
+                  *ngIf="Loginform.get('username').hasError(validation.type) && (Loginform.get('username').dirty || Loginform.get('username').touched) || formEmpy && Loginform.get('username').hasError(validation.type)">
+                  <ion-icon name="information-circle-outline"></ion-icon>&nbsp;{{validation.message}}
+                </div>
+              </ng-container>
+              <ion-input placeholder="Contraseña" (keypress)="eventHandler($event.keyCode)" formControlName="password"
+                [type]="hide ? 'password' : 'text'">
+                <ion-buttons>
+                  <ion-button slot="icon-only" (click)="hide = !hide">
+                    <ion-icon [name]="hide ? 'eye' : 'eye-off'"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-input>
+              <div class="validation-errors">
+                <ng-container *ngFor="let validation of validation_messages.password">
+                  <div class="error-message"
+                    *ngIf="Loginform.get('password').hasError(validation.type) && (Loginform.get('password').dirty || Loginform.get('password').touched) || Loginform.get('password').hasError(validation.type) && formEmpy">
+                    <ion-icon name="information-circle-outline"></ion-icon>&nbsp;{{validation.message}}
+                  </div>
+                </ng-container>
+              </div>
+              <ion-button shape="round" expand="full" color="success" id="bttSubmit" type="submit">Iniciar</ion-button>
+            </form>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>

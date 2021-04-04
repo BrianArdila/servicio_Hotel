@@ -1,0 +1,30 @@
+#logo{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 40%;
+}
+ion-content{
+    --background: rgba(204, 235, 207, 0.75);
+}
+.container{
+    box-shadow: 2px 2px 10px #666;
+    
+    ion-input {
+        border: 2px solid rgba(144, 144, 144, 0.15) ;
+        margin: 10px auto;
+        border-radius: 12px;  
+        background: rgba(144, 144, 144, 0.15);
+    }
+    .error-message {
+        color: #eb4545;
+        text-align: center;
+        font-size: 14px;
+    
+        ion-icon {
+            color: #eb4545;
+            font-size: 14px;
+        }
+    }  
+}
