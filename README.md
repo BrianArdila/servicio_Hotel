@@ -1,7 +1,7 @@
 <h1>Develop a mobile Servicio Hotel </h1>
 <p>
   
-Develop a mobile and web tool, which al-lows promoting and making the services offered within the initiative visible to users, with the aim of expanding the idea to a larger population scale. high. This multiplatform application is made using the Ionic Framework and Firebase technologies, which provide unique characteristics that make this a functional application. In addition to providing high compatibility with Android operating systems from version 6.0 Marshmallow and iOS from version 11. 
+Creation of native and hybrid web application for hotel.
   
 </p>
 
